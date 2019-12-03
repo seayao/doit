@@ -23,7 +23,7 @@ class SideBar extends Component {
                         key={item.key}
                         title={
                             <span>
-                                <Icon type={item.icon} theme="twoTone" />
+                                <Icon type={item.icon} />
                                 <span>{item.title}</span>
                             </span>
                         }>
@@ -34,7 +34,7 @@ class SideBar extends Component {
                 return (
                     <Menu.Item key={item.key}>
                         <Link to={item.key}>
-                            <Icon type={item.icon} theme="twoTone" />
+                            <Icon type={item.icon} />
                             <span>{item.title}</span>
                         </Link>
                     </Menu.Item>

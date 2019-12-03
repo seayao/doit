@@ -7,6 +7,7 @@ import Bug from '../pages/bug'
 import Message from '../pages/message'
 import Setting from '../pages/setting'
 import { Layout } from 'antd'
+import './index.less'
 const { Sider, Content } = Layout
 
 class Layouts extends Component {
@@ -16,7 +17,7 @@ class Layouts extends Component {
                 <Sider>
                     <SideBar />
                 </Sider>
-                <Layout style={{ background: '#f0f2f5' }}>
+                <Layout className="main-container">
                     <Content>
                         <Switch>
                             <Route exact path='/' component={Home}/>
