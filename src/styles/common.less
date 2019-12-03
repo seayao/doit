@@ -1,0 +1,64 @@
+html,
+body {
+  background-color: transparent !important;
+}
+
+.loopFontSize (@count)when(@count > 9) {
+  .fs-@{count} {
+    font-size: @count*1px  !important;
+  }
+  .loopFontSize((@count - 2));
+}
+
+.loopFontSize(48);
+
+.public-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  .public-header-container {
+    width: 100%;
+    height: 50px;
+    margin-top: -50px;
+    background: #fff;
+    .public-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+  }
+  .public-main-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .public-main {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  }
+  .public-footer-container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: -50px;
+    background: #fff;
+    .public-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+  }
+}
