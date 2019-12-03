@@ -5,7 +5,9 @@ import './index.less'
 import { Menu, Icon, Tooltip } from 'antd'
 import defaultSettings from '../../defaultSettings'
 import menuList from '../../router'
+import { githubUrl } from '../../defaultSettings'
 const { SubMenu } = Menu
+const { shell } = require('electron')
 
 class SideBar extends Component {
     getMenuNodes = (menuList) => { // 动态生成菜单
@@ -41,6 +43,10 @@ class SideBar extends Component {
         })
     }
 
+    handleGithubClick = () => {
+        shell.openExternal(githubUrl)
+    }
+
     componentWillMount() {
         this.menuNodes = this.getMenuNodes(menuList) // 动态获取菜单
     }
@@ -69,8 +75,8 @@ class SideBar extends Component {
                 <div className="footer-container">
                     <div className="footer-main">
                         <div className="version">v 0.1.0</div>
-                        <div className="link">
-                            <Tooltip placement="top" title="支持一下">
+                        <div className="link" onClick={this.handleGithubClick}>
+                            <Tooltip placement="top" title="⭐star一下">
                                 <Icon type="github" />
                             </Tooltip>
                         </div>

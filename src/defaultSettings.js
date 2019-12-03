@@ -1,4 +1,5 @@
 module.exports = {
     name: 'DOIT',
-    logo: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+    logo: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    githubUrl: 'https://github.com/seayao/doit'
 }
