@@ -9,7 +9,7 @@ const defaultMenus = require('../menus/tray-menus')
 function creatTray({ menus = defaultMenus, title = appName, icon } = {}) {
   const iconPath = process.platform === 'darwin' ? systemPreferences.isDarkMode() ? trayIconLight : trayIconDark : trayIconLight
   let image = nativeImage.createFromPath(iconPath)
-  image.setTemplateImage(true)
+  image.setTemplateImage(true) // 'setTemplateImage function' is deprecated and will be removed. Please use 'isMacTemplateImage property' instead
   let tray = new Tray(image)
   tray.setToolTip(title)
   tray.setContextMenu(Menu.buildFromTemplate(menus))

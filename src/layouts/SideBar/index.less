@@ -1,9 +1,11 @@
+@import '../../styles/themes/default';
+
 .side-bar-container {
   width: 100%;
   height: 100%;
   padding: 169px 0 50px;
   box-sizing: border-box;
-  background: #016f55;
+  background: @color-primary;
 }
 
 .logo-container {
@@ -14,11 +16,11 @@
   text-align: center;
   overflow: hidden;
   .logo-img {
-    box-shadow: 0 2px 4px 0 #fff;
+    box-shadow: 0 2px 4px 0 @shadow-color;
   }
   .logo-label {
     margin: 15px 0;
-    color: #fff;
+    color: @text-color;
     font-size: 18px;
     font-weight: bold;
   }
@@ -35,7 +37,7 @@
   width: 100%;
   height: 50px;
   margin-bottom: -50px;
-  background: #005e47;
+  background: @color-primary;
   overflow: hidden;
   .footer-main {
     display: flex;
@@ -44,7 +46,7 @@
     width: 100%;
     height: 100%;
     padding: 0 32px;
-    color: #fff;
+    color: @text-color;
     .version {
       font-size: 12px;
     }

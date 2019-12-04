@@ -1,3 +1,5 @@
+@import 'themes/default';
+
 // ant组件样式覆盖
 .ant-layout {
   width: 100%;
@@ -9,11 +11,14 @@
 }
 
 .ant-menu {
-  background: #016f55;
+  background: @color-primary;
+  .ant-menu-item:hover {
+    background: @color-primary-hover;
+  }
   .ant-menu-item > a {
-    color: #fff;
+    color: @text-color;
   }
   .ant-menu-item-selected {
-    background: #1a7d65 !important;
+    background: @color-primary-selected !important;
   }
 }

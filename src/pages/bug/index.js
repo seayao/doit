@@ -9,13 +9,13 @@ class Bug extends Component {
     }
 
     start = () => {
-        this.setState({ loading: true })
-        setTimeout(() => {
-            this.setState({
-                selectedRowKeys: [],
-                loading: false
-            })
-        }, 1000)
+        // this.setState({ loading: true })
+        // setTimeout(() => {
+        //     this.setState({
+        //         selectedRowKeys: [],
+        //         loading: false
+        //     })
+        // }, 1000)
     }
 
     onSelectChange = selectedRowKeys => {

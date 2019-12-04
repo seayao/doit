@@ -1,32 +1,39 @@
 import React, { Component } from 'react'
-import { Redirect, Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import SideBar from './SideBar'
 import Home from '../pages/home/index'
-import Project from '../pages/project'
-import Bug from '../pages/bug'
-import Message from '../pages/message'
-import Setting from '../pages/setting'
+import routerConfig from '../router'
 import { Layout } from 'antd'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import './index.less'
+
 const { Sider, Content } = Layout
 
 class Layouts extends Component {
     render() {
-        return(
+        const path = this.props.location.pathname
+        return (
             <Layout>
                 <Sider>
                     <SideBar />
                 </Sider>
                 <Layout className="main-container">
                     <Content>
-                        <Switch>
-                            <Route exact path='/' component={Home}/>
-                            <Route path='/home' component={Home}/>
-                            <Route path='/project' component={Project}/>
-                            <Route path='/bug' component={Bug}/>
-                            <Route path='/message' component={Message}/>
-                            <Route path='/setting' component={Setting}/>
-                        </Switch>
+                        <TransitionGroup className="transition-group-container">
+                            <CSSTransition
+                                timeout={200}
+                                classNames="fade"
+                                key={path}>
+                                <Switch>
+                                    <Route exact path='/' component={Home}/>
+                                    {
+                                        routerConfig.map((router, index) => (
+                                            <Route path={router.path} component={router.component} key={index}/>
+                                        ))
+                                    }
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
                     </Content>
                 </Layout>
             </Layout>
@@ -34,4 +41,4 @@ class Layouts extends Component {
     }
 }
 
-export default Layouts
+export default withRouter(Layouts)

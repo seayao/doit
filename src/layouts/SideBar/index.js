@@ -4,23 +4,23 @@ import { Avatar, Badge } from 'antd'
 import './index.less'
 import { Menu, Icon, Tooltip } from 'antd'
 import defaultSettings from '../../defaultSettings'
-import menuList from '../../router'
+import routerConfig from '../../router'
 import { githubUrl } from '../../defaultSettings'
 const { SubMenu } = Menu
 const { shell } = require('electron')
 
 class SideBar extends Component {
-    getMenuNodes = (menuList) => { // 动态生成菜单
-        return menuList.map(item => {
+    getMenuNodes = (routerConfig) => { // 动态生成菜单
+        return routerConfig.map(item => {
             if (item.children && item.children.length) {
                 const path = this.props.location.pathname
-                const c = item.children.find(c => c.key === path)
+                const c = item.children.find(c => c.path === path)
                 if (c) {
-                    this.openKey = item.key
+                    this.openKey = item.path
                 }
                 return (
                     <SubMenu
-                        key={item.key}
+                        key={item.path}
                         title={
                             <span>
                                 <Icon type={item.icon} />
@@ -32,8 +32,8 @@ class SideBar extends Component {
                 )
             } else {
                 return (
-                    <Menu.Item key={item.key}>
-                        <Link to={item.key}>
+                    <Menu.Item key={item.path}>
+                        <Link to={item.path}>
                             <Icon type={item.icon} />
                             <span>{item.title}</span>
                         </Link>
@@ -48,11 +48,12 @@ class SideBar extends Component {
     }
 
     componentWillMount() {
-        this.menuNodes = this.getMenuNodes(menuList) // 动态获取菜单
+        this.menuNodes = this.getMenuNodes(routerConfig) // 动态获取菜单
     }
 
     render() {
-        const path = this.props.location.pathname
+        let path = this.props.location.pathname
+        path = (path === '/' ? '/home' : path)
         const openKey = this.openKey
         return(
             <div className="side-bar-container">

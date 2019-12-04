@@ -51,14 +51,14 @@ function createWindow(key, options = {}) {
 
   const defaultOptions = {
     icon: appIcon,
-    width: 1024,
-    height: 768,
+    width: 1000,
+    height: 800,
     show: false,
     hasShadow: true,
     webPreferences: {
       nodeIntegration: true
     },
-    // frame: false, // 无边框窗口
+    frame: false, // 无边框窗口
     // skipTaskbar: false, // 是否在任务栏中隐藏窗口
     // backgroundColor: '#fff',
     // transparent: true, // 窗口是否透明
