@@ -1,4 +1,4 @@
-const listGrid = {
+const gridGutter = {
     gutter: 5,
     xxl: 6,
     xl: 4,
@@ -8,4 +8,4 @@ const listGrid = {
     xs: 1,
 }
 
-export default listGrid
+export default gridGutter

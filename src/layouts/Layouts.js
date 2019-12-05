@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import SideBar from './SideBar'
+import NavBar from './NavBar'
 import Home from '../pages/home/index'
 import routerConfig from '../router'
 import { Layout } from 'antd'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import './index.less'
+import './Layouts.less'
 
-const { Sider, Content } = Layout
+const { Sider, Content, Header } = Layout
 
 class Layouts extends Component {
     render() {
@@ -17,7 +18,10 @@ class Layouts extends Component {
                 <Sider>
                     <SideBar />
                 </Sider>
-                <Layout className="main-container">
+                <Layout className="layouts-main-container">
+                    <Header className="layouts-main-header">
+                        <NavBar />
+                    </Header>
                     <Content>
                         <TransitionGroup className="transition-group-container">
                             <CSSTransition

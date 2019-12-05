@@ -53,6 +53,8 @@ function createWindow(key, options = {}) {
     icon: appIcon,
     width: 1000,
     height: 800,
+    minWidth: 710,
+    minHeight: 500,
     show: false,
     hasShadow: true,
     webPreferences: {
@@ -60,8 +62,8 @@ function createWindow(key, options = {}) {
     },
     frame: false, // 无边框窗口
     // skipTaskbar: false, // 是否在任务栏中隐藏窗口
-    // backgroundColor: '#fff',
-    // transparent: true, // 窗口是否透明
+    backgroundColor: '#fff',
+    transparent: true, // 窗口是否透明
     // titleBarStyle: 'default',
     vibrancy: 'appearance-based', // 毛玻璃效果
     ...config
@@ -78,7 +80,6 @@ function createWindow(key, options = {}) {
   win.on('close', e => {
     delete windowList[key]
   })
-
   return win
 }
 

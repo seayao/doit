@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, List, Button, Typography, Pagination } from 'antd'
-import listGrid from '../../utils/listGrid'
+import gridGutter from '../../utils/gridGutter'
 import './index.less'
 
 const { Paragraph } = Typography
@@ -13,7 +13,7 @@ class Project extends Component {
           <List
               rowKey="id"
               loading={loading}
-              grid={listGrid}
+              grid={gridGutter}
               dataSource={list}
               renderItem={item => (
                   <List.Item>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Layouts from './layouts/index'
+import Layouts from './layouts/Layouts'
 import PageLoading from './components/PageLoading'
 import './styles/index.less'
 
@@ -15,7 +15,7 @@ class App extends Component {
             this.setState({
                 loading: false
             })
-        }, 1000)
+        }, 400)
     }
 
     componentWillMount() {

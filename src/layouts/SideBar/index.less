@@ -6,6 +6,7 @@
   padding: 169px 0 50px;
   box-sizing: border-box;
   background: @color-primary;
+  -webkit-app-region: drag;
 }
 
 .logo-container {
@@ -15,14 +16,17 @@
   padding: 32px 0 16px;
   text-align: center;
   overflow: hidden;
-  .logo-img {
-    box-shadow: 0 2px 4px 0 @shadow-color;
+  .logo-img-wrap {
+    -webkit-app-region: no-drag;
   }
   .logo-label {
     margin: 15px 0;
-    color: @text-color;
-    font-size: 18px;
-    font-weight: bold;
+    span {
+      color: @text-color;
+      font-size: 18px;
+      font-weight: bold;
+      -webkit-app-region: no-drag;
+    }
   }
 }
 
@@ -31,6 +35,9 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  .ant-menu {
+    -webkit-app-region: no-drag;
+  }
 }
 
 .footer-container {
@@ -49,9 +56,11 @@
     color: @text-color;
     .version {
       font-size: 12px;
+      -webkit-app-region: no-drag;
     }
-    .link {
+    .link-wrap {
       cursor: pointer;
+      -webkit-app-region: no-drag;
     }
   }
 }

@@ -3,9 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 import { Avatar, Badge } from 'antd'
 import './index.less'
 import { Menu, Icon, Tooltip } from 'antd'
-import defaultSettings from '../../defaultSettings'
 import routerConfig from '../../router'
-import { githubUrl } from '../../defaultSettings'
+import { version, githubUrl } from '../../defaultSettings'
 const { SubMenu } = Menu
 const { shell } = require('electron')
 
@@ -58,10 +57,12 @@ class SideBar extends Component {
         return(
             <div className="side-bar-container">
                 <div className="logo-container">
-                    <Badge count={1}>
-                        <Avatar size={64} src={defaultSettings.logo} className="logo-img" />
+                    <Badge className="logo-img-wrap" count={1} style={{ boxShadow: 'none', WebkitAppRegion: 'no-drag' } }>
+                        <Avatar shape="square" size={64} src={require('../../../assets/avatar.jpg')} />
                     </Badge>
-                    <div className="logo-label">{defaultSettings.name}</div>
+                    <div className="logo-label">
+                        <span>YYYAO</span>
+                    </div>
                 </div>
                 <div className="menu-container">
                     <Menu
@@ -75,12 +76,12 @@ class SideBar extends Component {
                 </div>
                 <div className="footer-container">
                     <div className="footer-main">
-                        <div className="version">v 0.1.0</div>
-                        <div className="link" onClick={this.handleGithubClick}>
-                            <Tooltip placement="top" title="⭐star一下">
+                        <div className="version">v {version}</div>
+                        <Tooltip className="link-wrap" placement="top" title="⭐star一下">
+                            <div className="link" onClick={this.handleGithubClick}>
                                 <Icon type="github" />
-                            </Tooltip>
-                        </div>
+                            </div>
+                        </Tooltip>
                     </div>
                 </div>
             </div>

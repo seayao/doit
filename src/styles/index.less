@@ -1,5 +1,23 @@
 @import './var.less';
 @import './reset.less';
-@import './flex-layout.less';
 @import './common.less';
 @import './antd.less';
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
