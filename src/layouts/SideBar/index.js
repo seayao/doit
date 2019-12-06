@@ -11,33 +11,37 @@ const { shell } = require('electron')
 class SideBar extends Component {
     getMenuNodes = (routerConfig) => { // 动态生成菜单
         return routerConfig.map(item => {
-            if (item.children && item.children.length) {
-                const path = this.props.location.pathname
-                const c = item.children.find(c => c.path === path)
-                if (c) {
-                    this.openKey = item.path
-                }
-                return (
-                    <SubMenu
-                        key={item.path}
-                        title={
-                            <span>
+            if (!item.hidden) { // 跳过隐藏的路由
+                if (item.children && item.children.length) {
+                    const path = this.props.location.pathname
+                    const c = item.children.find(c => c.path === path)
+                    if (c) {
+                        this.openKey = item.path
+                    }
+                    return (
+                        <SubMenu
+                            key={item.path}
+                            title={
+                                <span>
                                 <Icon type={item.icon} />
                                 <span>{item.title}</span>
                             </span>
-                        }>
-                        { this.getMenuNodes(item.children) }
-                    </SubMenu>
-                )
+                            }>
+                            { this.getMenuNodes(item.children) }
+                        </SubMenu>
+                    )
+                } else {
+                    return (
+                        <Menu.Item key={item.path}>
+                            <Link to={item.path}>
+                                <Icon type={item.icon} />
+                                <span>{item.title}</span>
+                            </Link>
+                        </Menu.Item>
+                    )
+                }
             } else {
-                return (
-                    <Menu.Item key={item.path}>
-                        <Link to={item.path}>
-                            <Icon type={item.icon} />
-                            <span>{item.title}</span>
-                        </Link>
-                    </Menu.Item>
-                )
+                return false
             }
         })
     }

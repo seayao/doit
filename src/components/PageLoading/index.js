@@ -4,7 +4,7 @@ import './index.less'
 
 const PageLoading = () => (
     <div className="page-loading-container">
-        <Spin tip="Loading..." size="large" />
+        <Spin size="large" />
     </div>
 )
 

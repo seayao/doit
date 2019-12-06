@@ -20,7 +20,9 @@ class Project extends Component {
                       <Card
                           className="card-item"
                           hoverable
-                          cover={<img alt={item.title} src={item.cover} />}>
+                          cover={
+                              <img alt={item.title} src={item.cover} />
+                          }>
                           <Card.Meta
                               title={<a>{item.title}</a>}
                               description={

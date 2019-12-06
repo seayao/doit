@@ -1,3 +1,4 @@
+import Login from '../pages/Login/index'
 import Home from '../pages/home/index'
 import Project from '../pages/project'
 import Bug from '../pages/bug'
@@ -5,6 +6,12 @@ import Message from '../pages/message'
 import Setting from '../pages/setting'
 
 const routerConfig = [{
+    path: '/login',
+    component: Login,
+    title: '登录',
+    icon: 'login',
+    hidden: true
+}, {
     path: '/home',
     component: Home,
     title: '首页',

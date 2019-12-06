@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/seayao/doit#readme",
   "dependencies": {
+    "@antv/data-set": "^0.10.2",
     "antd": "^3.26.0",
+    "bizcharts": "^3.5.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
