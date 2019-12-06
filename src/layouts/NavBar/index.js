@@ -55,6 +55,7 @@ class NavBar extends Component {
         return (
             <div className="navbar-container clearfix">
                 <div className="navbar-left fl">
+                    <Icon type="sync" />
                     <Search
                         placeholder="搜索"
                         onSearch={value => console.log(value)}

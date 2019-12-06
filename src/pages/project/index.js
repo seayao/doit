@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, List, Button, Typography, Pagination } from 'antd'
+import { Card, List, Icon, Typography, Pagination } from 'antd'
 import gridGutter from '../../utils/gridGutter'
 import './index.less'
 
@@ -48,10 +48,10 @@ class Project extends Component {
             <div className="public-header-container">
                 <div className="public-header project-header">
                     <div className="btn-wrap">
-                        <Button shape="circle" icon="search" />
+                        <Icon type="search" />
                     </div>
                     <div className="btn-wrap">
-                       <Button shape="circle" icon="plus" />
+                        <Icon type="plus" />
                     </div>
                 </div>
             </div>
